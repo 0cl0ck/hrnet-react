@@ -29,7 +29,13 @@ const EmployeeList = () => {
   return (
     <div id="employee-div" className="container">
       <h1>Current Employees</h1>
-      <DataTable columns={columns} data={employees} pagination />
+      <DataTable
+        columns={columns}
+        data={employees}
+        pagination
+        aria-label="Liste des employés actuels"
+        role="table"
+      />
       <Link to="/">Home</Link>
     </div>
   );
