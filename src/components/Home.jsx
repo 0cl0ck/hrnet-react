@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import DatePicker from "react-datepicker";
 import { Link } from "react-router-dom";
 import "react-datepicker/dist/react-datepicker.css";
-import Modal from "../react-modal-component/src/Modal";
+import Modal from "./Modal";
 import { addEmployee } from "../store/employeesSlice";
 import { openModal, closeModal } from "../store/modalSlice";
 
