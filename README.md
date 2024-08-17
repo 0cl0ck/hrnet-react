@@ -13,7 +13,7 @@ HRnet est une application de gestion des ressources humaines développée avec R
 1. Clonez ce dépôt :
 ```
 
-git clone https://github.com/votre-nom-utilisateur/hrnet-react.git
+git clone https://github.com/0cl0ck/hrnet-react
 
 ```
 
