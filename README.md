@@ -1,4 +1,3 @@
-```markdown
 # HRnet
 
 HRnet est une application de gestion des ressources humaines développée avec React. Elle permet de gérer efficacement les informations des employés et de créer de nouveaux profils.
@@ -7,7 +6,6 @@ HRnet est une application de gestion des ressources humaines développée avec R
 
 - Création de nouveaux profils d'employés
 - Affichage de la liste des employés actuels
-- Recherche et filtrage des employés
 - Interface utilisateur intuitive et réactive
 
 ## Installation
