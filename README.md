@@ -71,4 +71,3 @@ Les contributions à ce projet sont les bienvenues. N'hésitez pas à ouvrir une
 ## Licence
 
 Ce projet est sous licence [MIT](https://choosealicense.com/licenses/mit/).
-```
