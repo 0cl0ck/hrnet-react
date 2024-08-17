@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import Modal from "../react-modal-component/src/Modal";
+import Modal from "../components/Modal";
 
 describe("Modal Component", () => {
   test("ne s'affiche pas quand isOpen est false", () => {
