@@ -1,0 +1,23 @@
+{
+  "name": "@hughsawed/react-modal-component",
+  "version": "1.0.2",
+  "description": "Un composant Modal React",
+  "main": "dist/Modal.jsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src --out-dir dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.24.8",
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/preset-react": "^7.24.7"
+  }
+}
