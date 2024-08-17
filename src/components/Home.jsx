@@ -1,9 +1,15 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import DatePicker from "react-datepicker";
 import { Link } from "react-router-dom";
 import "react-datepicker/dist/react-datepicker.css";
+import Modal from "./Modal";
+import { addEmployee } from "../store/employeesSlice";
+import { openModal, closeModal } from "../store/modalSlice";
 
 const Home = () => {
+  const dispatch = useDispatch();
+  const isModalOpen = useSelector((state) => state.modal.isOpen);
   const [startDate, setStartDate] = useState(new Date());
   const [birthDate, setBirthDate] = useState(new Date());
   const [formState, setFormState] = useState({
@@ -87,10 +93,14 @@ const Home = () => {
   };
 
   const saveEmployee = () => {
-    const employees = JSON.parse(localStorage.getItem("employees")) || [];
-    employees.push({ ...formState, startDate, birthDate });
-    localStorage.setItem("employees", JSON.stringify(employees));
-    alert("Employee Created!");
+    dispatch(
+      addEmployee({
+        ...formState,
+        startDate: startDate.toISOString(),
+        birthDate: birthDate.toISOString(),
+      })
+    );
+    dispatch(openModal());
   };
 
   return (
@@ -114,6 +124,7 @@ const Home = () => {
           name="firstName"
           value={formState.firstName}
           onChange={handleChange}
+          autoComplete="given-name"
         />
 
         <label htmlFor="last-name">Last Name</label>
@@ -123,16 +134,19 @@ const Home = () => {
           name="lastName"
           value={formState.lastName}
           onChange={handleChange}
+          autoComplete="family-name"
         />
 
         <label htmlFor="date-of-birth">Date of Birth</label>
         <DatePicker
+          id="date-of-birth"
           selected={birthDate}
           onChange={(date) => setBirthDate(date)}
         />
 
         <label htmlFor="start-date">Start Date</label>
         <DatePicker
+          id="start-date"
           selected={startDate}
           onChange={(date) => setStartDate(date)}
         />
@@ -179,6 +193,7 @@ const Home = () => {
             name="zipCode"
             value={formState.zipCode}
             onChange={handleChange}
+            autoComplete="postal-code"
           />
         </fieldset>
 
@@ -197,9 +212,9 @@ const Home = () => {
         </select>
         <button type="submit">Save</button>
       </form>
-      {/* <div id="confirmation" className="modal">
+      <Modal isOpen={isModalOpen} onClose={() => dispatch(closeModal())}>
         Employee Created!
-      </div> */}
+      </Modal>
     </div>
   );
 };
