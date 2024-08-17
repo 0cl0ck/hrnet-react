@@ -125,6 +125,7 @@ const Home = () => {
           value={formState.firstName}
           onChange={handleChange}
           autoComplete="given-name"
+          required
         />
 
         <label htmlFor="last-name">Last Name</label>
@@ -135,6 +136,7 @@ const Home = () => {
           value={formState.lastName}
           onChange={handleChange}
           autoComplete="family-name"
+          required
         />
 
         <label htmlFor="date-of-birth">Date of Birth</label>
@@ -161,6 +163,7 @@ const Home = () => {
             name="street"
             value={formState.street}
             onChange={handleChange}
+            required
           />
 
           <label htmlFor="city">City</label>
@@ -170,6 +173,7 @@ const Home = () => {
             name="city"
             value={formState.city}
             onChange={handleChange}
+            required
           />
 
           <label htmlFor="state">State</label>
@@ -178,6 +182,7 @@ const Home = () => {
             id="state"
             value={formState.state}
             onChange={handleChange}
+            required
           >
             {states.map((state) => (
               <option key={state.abbreviation} value={state.abbreviation}>
@@ -194,6 +199,7 @@ const Home = () => {
             value={formState.zipCode}
             onChange={handleChange}
             autoComplete="postal-code"
+            required
           />
         </fieldset>
 
@@ -203,6 +209,7 @@ const Home = () => {
           id="department"
           value={formState.department}
           onChange={handleChange}
+          required
         >
           <option>Sales</option>
           <option>Marketing</option>
